@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dundigala Shyamson | Portfolio</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* GLOBAL */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:#0f172a;
+color:white;
+}
+
+/* HEADER */
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 80px;
+background:#020617;
+position:fixed;
+width:100%;
+top:0;
+z-index:1000;
+}
+
+.logo{
+font-size:28px;
+font-weight:bold;
+color:#38bdf8;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+}
+
+nav ul li{
+margin-left:30px;
+}
+
+nav ul li a{
+color:white;
+text-decoration:none;
+font-size:18px;
+}
+
+/* SECTIONS */
+
+section{
+min-height:100vh;
+padding:110px 80px 80px 80px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+}
+
+/* HERO */
+
+.hero h1{
+font-size:65px;
+color:#38bdf8;
+}
+
+.typing{
+font-size:32px;
+margin:15px 0;
+color:#cbd5f5;
+}
+
+.hero p{
+font-size:20px;
+max-width:700px;
+line-height:1.7;
+margin-top:10px;
+}
+
+.buttons{
+margin-top:30px;
+}
+
+.btn{
+display:inline-block;
+padding:14px 30px;
+margin-right:15px;
+background:#38bdf8;
+color:black;
+font-size:18px;
+text-decoration:none;
+border-radius:6px;
+font-weight:bold;
+}
+
+/* SOCIAL ICONS */
+
+.social{
+margin-top:25px;
+}
+
+.social a{
+color:white;
+font-size:28px;
+margin-right:20px;
+transition:.3s;
+}
+
+.social a:hover{
+color:#38bdf8;
+}
+
+/* ABOUT */
+
+.about-container{
+display:flex;
+align-items:center;
+gap:50px;
+max-width:1000px;
+}
+
+.profile-photo{
+width:180px;
+height:230px;
+object-fit:cover;
+border-radius:8px;
+}
+
+.about-container p{
+font-size:20px;
+line-height:1.7;
+}
+
+/* PROJECTS */
+
+.projects-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+gap:30px;
+
+}
+
+.project-card{
+
+background:#1e293b;
+
+padding:20px;
+
+border-radius:10px;
+
+transition:0.4s;
+
+}
+
+.project-card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:0 10px 25px rgba(0,0,0,0.6);
+
+}
+
+.project-card img{
+
+width:100%;
+
+border-radius:6px;
+
+margin-bottom:10px;
+
+}
+
+.project-buttons{
+
+margin-top:10px;
+
+}
+
+.project-buttons a{
+
+margin-right:10px;
+
+}
+/* SKILLS */
+
+.skills{
+max-width:700px;
+}
+
+.skill{
+margin-bottom:25px;
+}
+
+.skill-name{
+font-size:20px;
+margin-bottom:6px;
+}
+
+.skill-bar{
+width:100%;
+background:#1e293b;
+height:10px;
+border-radius:10px;
+overflow:hidden;
+}
+
+.skill-fill{
+height:10px;
+background:#38bdf8;
+width:0;
+animation:fill 2s forwards;
+}
+
+@keyframes fill{
+from{width:0}
+}
+
+.java{width:90%}
+.sql{width:80%}
+.html{width:85%}
+.spring{width:70%}
+.git{width:75%}
+
+/* EDUCATION */
+
+.edu-box{
+background:#1e293b;
+padding:15px;
+margin:8px 0;
+border-radius:8px;
+font-size:20px;
+max-width:700px;
+transition:0.3s;
+}
+
+.edu-box:hover{
+transform:translateY(-5px);
+box-shadow:0 8px 20px rgba(0,0,0,0.5);
+}
+
+/* CERTIFICATIONS */
+
+.cert-box{
+background:#1e293b;
+padding:20px;
+margin:15px 0;
+border-radius:8px;
+font-size:20px;
+max-width:700px;
+}
+
+/* CONTACT */
+
+.contact p{
+font-size:20px;
+margin:1px 0;
+}
+
+form{
+display:flex;
+flex-direction:column;
+max-width:450px;
+margin-top:20px;
+}
+
+form input, form textarea{
+margin:10px 0;
+padding:12px;
+font-size:16px;
+border:none;
+border-radius:6px;
+}
+
+form button{
+padding:12px;
+font-size:18px;
+background:#38bdf8;
+border:none;
+}
+
+/* EMAIL REDIRECT */
+
+function sendEmail(){
+
+let name = document.getElementById("name").value;
+let email = document.getElementById("email").value;
+let message = document.getElementById("message").value;
+
+let body = 
+"Name: " + name + "%0D%0A" +
+"Email: " + email + "%0D%0A%0D%0A" +
+message;
+
+let mailtoLink = 
+"mailto:dundigalashyam@gmail.com?subject=" + subject + "&body=" + body;
+
+window.location.href = mailtoLink;
+
+}
+form button{
+padding:14px;
+font-size:18px;
+background:#38bdf8;
+border:none;
+border-radius:6px;
+cursor:pointer;
+transition:0.3s;
+}
+
+form button:hover{
+background:#0ea5e9;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:25px;
+background:#020617;
+font-size:18px;
+}
+
+/* TYPING CURSOR */
+
+.cursor{
+border-right:3px solid white;
+animation:blink 0.8s infinite;
+}
+
+@keyframes blink{
+50%{border-color:transparent}
+}
+
+
+/* HAMBURGER MENU */
+
+.menu-icon{
+display:none;
+font-size:28px;
+cursor:pointer;
+}
+
+#menu-toggle{
+display:none;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media(max-width:900px){
+
+header{
+padding:20px 30px;
+}
+
+section{
+padding:140px 30px 60px 30px;
+}
+
+/* NAVIGATION */
+
+nav ul{
+flex-direction:column;
+position:absolute;
+top:70px;
+left:0;
+width:100%;
+background:#020617;
+display:none;
+text-align:center;
+}
+
+nav ul li{
+margin:20px 0;
+}
+
+#menu-toggle:checked + .menu-icon + nav ul{
+display:block;
+}
+
+.menu-icon{
+display:block;
+}
+
+/* ABOUT SECTION */
+
+.about-container{
+flex-direction:column;
+text-align:center;
+}
+
+/* HERO TEXT */
+
+.hero h1{
+font-size:40px;
+}
+
+.typing{
+font-size:22px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+
+
+
+
+
+/* PROJECTS GRID */
+
+.projects-grid{
+grid-template-columns:1fr;
+}
+
+/* SKILLS */
+
+.skills{
+max-width:100%;
+}
+
+/* FORM */
+
+form{
+max-width:100%;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<header>
+
+<div class="logo">Shyamson Portfolio</div>
+
+<input type="checkbox" id="menu-toggle">
+
+<label for="menu-toggle" class="menu-icon">
+<i class="fas fa-bars"></i>
+</label>
+
+<nav>
+
+<ul>
+
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#resume">Resume</a></li>
+<li><a href="#certifications">Certifications</a></li>
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+<!-- HERO -->
+
+<section id="home" class="hero">
+
+<h1>Dundigala Shyamson</h1>
+
+<div class="typing">
+<span id="typing-text"></span><span class="cursor"></span>
+</div>
+
+<p>
+
+Computer Science graduate skilled in Core Java, JDBC, SQL,
+and Spring Boot. Passionate about building scalable backend
+applications and REST APIs.
+
+</p>
+
+<p>
+ ✉ dundigalashyam@gmail.com <br>
+📞 9100588279 <br>
+📍 Hyderabad 
+</p>
+
+<div class="buttons">
+
+<a href="resume.pdf" download class="btn">Download Resume</a>
+
+<a href="#contact" class="btn">Contact Me</a>
+
+</div>
+
+<div class="social">
+
+<a href="https://github.com/Shyam5597"><i class="fab fa-github"></i>GitHub</a>
+
+<a href="https://linkedin.com/in/shyam-dundigala-a9659a329"><i class="fab fa-linkedin"></i>LinkedIn</a>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<h2 style="font-size:40px;margin-bottom:40px;">About Me</h2>
+
+<div class="about-container">
+
+<img src="photo.jpg" class="profile-photo">
+
+<p>
+
+I am a Computer Science graduate with strong knowledge in Core Java,
+SQL, JDBC and Spring Boot.
+
+I enjoy developing backend applications and solving real-world
+problems using Object Oriented Programming principles.
+
+I built projects like <br>
+"Sports Team Management System" and
+"Loan Eligibility Application", gaining hands-on experience
+in Java backend development, Web Development.
+
+Currently seeking opportunities as a "Java Developer or Backend Developer".
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- EDUCATION -->
+
+<section id="education">
+
+<h2 style="font-size:40px;margin-bottom:40px;">Education</h2>
+
+<div class="edu-box">
+
+<h3>B.Tech Computer Science and Engineering</h3>
+<p>CMR Engineering College, Hyderabad</p>
+<p>2021 – 2025</p>
+<p><b>CGPA : 7.23</b></p>
+
+</div>
+
+<div class="edu-box">
+
+<h3>Telangana State Board Of Intermediate Education</h3>
+<p>Sri Surya Junior College, Hyderabad</p>
+<p>2019 – 2021</p>
+<p><b>Marks : 789</b></p>
+
+</div>
+
+<div class="edu-box">
+
+<h3>Secondary School Certificate (SSC)</h3>
+<p>Swathi High School, Madhapur, Hyderabad</p>
+<p>2018 – 2019</p>
+<p><b>CGPA : 9.0</b></p>
+
+</div>
+
+</section>
+
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+<h2 style="font-size:40px;margin-bottom:40px;">Projects</h2>
+
+<div class="projects-grid">
+
+<div class="project-card">
+
+<img src="project1.jpg">
+
+<h3>Sports Team Management System</h3>
+
+<p>Java + JDBC application.</p>
+
+<div class="project-buttons">
+
+<a href="#" class="btn">GitHub</a>
+
+<a href="#" class="btn">Live Demo</a>
+
+</div>
+
+</div>
+
+<div class="project-card">
+
+<img src="project2.jpg">
+
+<h3>Loan Eligibility App</h3>
+
+<p>Java console project using OOP.</p>
+
+<div class="project-buttons">
+
+<a href="#" class="btn">GitHub</a>
+
+<a href="#" class="btn">Live Demo</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+<h2 style="font-size:40px;margin-bottom:40px;">Technical Skills</h2>
+
+<div class="skills">
+
+<div class="skill">
+<div class="skill-name">Core Java</div>
+<div class="skill-bar"><div class="skill-fill java"></div></div>
+</div>
+
+<div class="skill">
+<div class="skill-name">SQL</div>
+<div class="skill-bar"><div class="skill-fill sql"></div></div>
+</div>
+
+<div class="skill">
+<div class="skill-name">HTML / CSS</div>
+<div class="skill-bar"><div class="skill-fill html"></div></div>
+</div>
+
+<div class="skill">
+<div class="skill-name">Spring Boot</div>
+<div class="skill-bar"><div class="skill-fill spring"></div></div>
+</div>
+
+<div class="skill">
+<div class="skill-name">Git / GitHub</div>
+<div class="skill-bar"><div class="skill-fill git"></div></div>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- RESUME -->
+
+<section id="resume">
+
+<h2 style="font-size:40px;margin-bottom:40px;">Resume</h2>
+
+<a href="resume.pdf" download class="btn">Download Resume</a>
+
+</section>
+
+
+<!-- CERTIFICATIONS -->
+
+<section id="certifications">
+
+<h2 style="font-size:40px;margin-bottom:40px;">Certifications</h2>
+
+<div class="cert-box">HTML & MySQL Certification – IIT Bombay</div>
+
+<div class="cert-box">Java & SQL Certifications – HackerRank</div>
+
+<div class="cert-box">Accenture Data Analytics Internship</div>
+
+<div class="cert-box">AWS Cloud Internship</div>
+
+<div class="cert-box">6 Months Java Training – Vcube Software</div>
+
+</section>
+
+
+<section id="contact" class="contact">
+
+<h2 style="font-size:40px;margin-bottom:40px;">Contact Me</h2>
+<h2 > HIRE ME </h2>
+
+<p>Email: dundigalashyam@gmail.com</p>
+<p>Phone: 9100588279</p>
+<p>Location: Hyderabad</p>
+
+<form action="https://formspree.io/f/xwvrpeda" method="POST">
+
+<input type="text" name="name" placeholder="Your Name" required>
+
+<input type="email" name="email" placeholder="Your Email" required>
+
+<input type="text" name="subject" placeholder="Subject" required>
+
+<textarea name="message" rows="3" placeholder="Message" required></textarea>
+
+<button type="submit">Send Message</button>
+
+</form>
+
+</section>
+<footer>
+
+ 2025 Dundigala Shyamson | Software Engineer | Java Developer | Backend Developer
+
+</footer>
+
+
+<script>
+
+/* TYPING ANIMATION */
+
+const roles = ["Java Developer","Backend Developer"];
+
+let i = 0;
+let j = 0;
+let current = "";
+let isDeleting = false;
+
+function type(){
+
+current = roles[i];
+
+if(isDeleting){
+
+document.getElementById("typing-text").textContent =
+current.substring(0,j--);
+
+if(j==0){
+isDeleting=false;
+i++;
+if(i==roles.length){
+i=0;
+}
+}
+
+}
+
+else{
+
+document.getElementById("typing-text").textContent =
+current.substring(0,j++);
+
+if(j==current.length){
+isDeleting=true;
+}
+
+}
+
+setTimeout(type,120);
+
+}
+
+type();
+
+</script>
+
+</body>
+</html>
